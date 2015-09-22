@@ -102,22 +102,24 @@
  Returns a RTF edition of the attributed string.
  
  @author DJS 2004-12.
+ @version DJS 2015-09: Changed to use an empty dictionary instead of nil, to avoid a nullability warning.
 */
 
 - (NSData *)dejal_RTFValue
 {
-    return [self RTFFromRange:[self dejal_allRange] documentAttributes:nil];
+    return [self RTFFromRange:[self dejal_allRange] documentAttributes:@{}];
 }
 
 /**
  Returns a RTFD edition of the attributed string.
  
  @author DJS 2004-12.
+ @version DJS 2015-09: Changed to use an empty dictionary instead of nil, to avoid a nullability warning.
 */
 
 - (NSData *)dejal_RTFDValue
 {
-    return [self RTFDFromRange:[self dejal_allRange] documentAttributes:nil];
+    return [self RTFDFromRange:[self dejal_allRange] documentAttributes:@{}];
 }
 
 /**
