@@ -35,6 +35,7 @@
 
 + (instancetype)dejal_attributedStringWithBundleResource:(NSString *)resourceName extension:(NSString *)extension;
 + (instancetype)dejal_attributedStringWithImageFromURL:(NSURL *)fileURL;
++ (instancetype)dejal_attributedStringWithSymbolicLinkToURL:(NSURL *)fileURL;
 + (instancetype)dejal_attributedStringWithRTF:(NSData *)data;
 + (instancetype)dejal_attributedStringWithRTFD:(NSData *)data;
 

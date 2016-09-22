@@ -76,6 +76,49 @@
     return [self attributedStringWithAttachment:attachment];
 }
 
+/*
+ attributedStringWithSymbolicLinkToURL:
+ 
+ Convenience method to create and return an attributed string containing a symbolic link to the specified URL.  Returns nil if the URL is nil or there is no file in that location.
+ 
+ @author DJS 2009-11.
+ @version DJS 2016-05: Updated to use URLs.
+ */
+
++ (instancetype)dejal_attributedStringWithSymbolicLinkToURL:(NSURL *)fileURL;
+{
+    if (!fileURL)
+    {
+        return nil;
+    }
+    
+    NSFileWrapper *fileWrapper = [[NSFileWrapper alloc] initSymbolicLinkWithDestinationURL:fileURL];
+    
+    if (!fileWrapper)
+    {
+        return nil;
+    }
+    
+    NSString *linkPath = [[NSTemporaryDirectory() stringByAppendingPathComponent:[NSUUID UUID].UUIDString] dejal_validatedDirectoryPath];
+    
+    linkPath = [linkPath stringByAppendingPathComponent:[fileWrapper preferredFilename]];
+    
+    NSURL *linkURL = [NSURL fileURLWithPath:linkPath];
+    
+    //    NSLog(@"attributedStringWithSymbolicLinkToPath: %@: link: %@", path, linkPath);         // log
+    
+    [fileWrapper writeToURL:linkURL options:0 originalContentsURL:fileURL error:nil];
+    
+    NSTextAttachment *attachment = [[NSTextAttachment alloc] initWithFileWrapper:fileWrapper];
+    
+    if (!attachment)
+    {
+        return nil;
+    }
+    
+    return [self attributedStringWithAttachment:attachment];
+}
+
 /**
  Convenience method to create and return an autoreleased attributed string from the specified RTF data and document attributes (which can be nil).
 
