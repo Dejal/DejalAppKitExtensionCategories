@@ -3,7 +3,7 @@
 //  Dejal Open Source Categories
 //
 //  Created by David Sinclair on Tue Sep 24 2002.
-//  Copyright (c) 2002-2015 Dejal Systems, LLC. All rights reserved.
+//  Copyright (c) 2002-2016 Dejal Systems, LLC. All rights reserved.
 //
 //  Redistribution and use in source and binary forms, with or without modification,
 //  are permitted provided that the following conditions are met:

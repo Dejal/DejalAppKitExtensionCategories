@@ -3,7 +3,7 @@
 //  Dejal Open Source Categories
 //
 //  Created by David Sinclair on Tue Sep 24 2002.
-//  Copyright (c) 2002-2015 Dejal Systems, LLC. All rights reserved.
+//  Copyright (c) 2002-2016 Dejal Systems, LLC. All rights reserved.
 //
 //  Redistribution and use in source and binary forms, with or without modification,
 //  are permitted provided that the following conditions are met:
@@ -62,7 +62,7 @@
 
 - (BOOL)dejal_usedCommandModifier
 {
-    return ([[NSApp currentEvent] modifierFlags] & NSCommandKeyMask) == NSCommandKeyMask;
+    return ([[NSApp currentEvent] modifierFlags] & NSEventModifierFlagCommand) == NSEventModifierFlagCommand;
 }
 
 /**
@@ -73,7 +73,7 @@
 
 - (BOOL)dejal_usedOptionModifier
 {
-    return ([[NSApp currentEvent] modifierFlags] & NSAlternateKeyMask) == NSAlternateKeyMask;
+    return ([[NSApp currentEvent] modifierFlags] & NSEventModifierFlagOption) == NSEventModifierFlagOption;
 }
 
 /**
@@ -84,7 +84,7 @@
 
 - (BOOL)dejal_usedShiftModifier
 {
-    return ([[NSApp currentEvent] modifierFlags] & NSShiftKeyMask) == NSShiftKeyMask;
+    return ([[NSApp currentEvent] modifierFlags] & NSEventModifierFlagShift) == NSEventModifierFlagShift;
 }
 
 /**
@@ -95,7 +95,7 @@
 
 - (BOOL)dejal_usedControlModifier
 {
-    return ([[NSApp currentEvent] modifierFlags] & NSControlKeyMask) == NSControlKeyMask;
+    return ([[NSApp currentEvent] modifierFlags] & NSEventModifierFlagControl) == NSEventModifierFlagControl;
 }
 
 @end
