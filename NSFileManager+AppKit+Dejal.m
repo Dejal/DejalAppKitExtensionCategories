@@ -56,15 +56,16 @@
  If a file or folder exists at the path, it is moved to the Trash.  As with -removeFileAtPath:handler:, use caution with this method.  Returns YES if the file didn't exist, or was successsfully trashed, or NO if it couldn't be trashed.
  
  @author DJS 2007-07.
+ @version DJS 2019-11: Removed due to using deprecated API.  Could be replaced if needed. 
 */
 
-- (BOOL)dejal_trashFileIfExistsAtPath:(NSString *)path;
-{
-    if ([self fileExistsAtPath:path])
-        return [[NSWorkspace sharedWorkspace] performFileOperation:NSWorkspaceRecycleOperation source:[path stringByDeletingLastPathComponent] destination:@"" files:@[[path lastPathComponent]] tag:nil];
-    else
-        return YES;
-}
+//- (BOOL)dejal_trashFileIfExistsAtPath:(NSString *)path;
+//{
+//    if ([self fileExistsAtPath:path])
+//        return [[NSWorkspace sharedWorkspace] performFileOperation:NSWorkspaceRecycleOperation source:[path stringByDeletingLastPathComponent] destination:@"" files:@[[path lastPathComponent]] tag:nil];
+//    else
+//        return YES;
+//}
 
 @end
 

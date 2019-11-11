@@ -34,7 +34,7 @@
 
 - (BOOL)dejal_isDirectoryAtPath:(NSString *)path butNotPackage:(BOOL)notPackage;
 
-- (BOOL)dejal_trashFileIfExistsAtPath:(NSString *)path;
+//- (BOOL)dejal_trashFileIfExistsAtPath:(NSString *)path;
 
 @end
 
