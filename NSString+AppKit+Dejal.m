@@ -168,7 +168,7 @@
 {
     CGFloat r, g, b, a;
 
-    [[color colorUsingColorSpaceName:NSCalibratedRGBColorSpace] getRed:&r green:&g blue:&b alpha:&a];
+    [[color colorUsingColorSpace:NSColorSpace.sRGBColorSpace] getRed:&r green:&g blue:&b alpha:&a];
 
     if (a == 1.0)
         return [self stringWithFormat:@"%g %g %g", r, g, b];

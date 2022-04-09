@@ -43,7 +43,7 @@
 {
     CGFloat red, green, blue, alpha;
     
-    [[color colorUsingColorSpaceName:NSCalibratedRGBColorSpace] getRed:&red green:&green blue:&blue alpha:&alpha];
+    [[color colorUsingColorSpace:NSColorSpace.sRGBColorSpace] getRed:&red green:&green blue:&blue alpha:&alpha];
     
     return [self dictionaryWithObjectsAndKeys:
         @(red), @"Red",

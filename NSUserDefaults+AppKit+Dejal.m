@@ -148,7 +148,7 @@
 {
     CGFloat grayFloat;
 
-    [[gray colorUsingColorSpaceName:NSCalibratedWhiteColorSpace] getWhite:&grayFloat alpha:NULL];
+    [[gray colorUsingColorSpace:NSColorSpace.deviceGrayColorSpace] getWhite:&grayFloat alpha:NULL];
     [self setFloat:grayFloat forKey:defaultName];
 }
 
